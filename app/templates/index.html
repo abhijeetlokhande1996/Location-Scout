@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Location SCOUT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+        .container {
+            max-width: 500px;
+            padding-top: 20px;
+        }
+        input {
+            max-width: 250px;
+        }
+        .avatar {
+            max-width: 150px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Location SCOUT</h1>
+        <h3>Enter weights between 0 to 1 for following parameters</h3>
+
+        <br>
+        <form role="form" method="post" action="{{ url_for('home') }}">
+            <div class="form-group">
+                <label>Rent Weight</label>
+                <input type="number" class="form-control" name="RENT" step="0.01" value="0.5" required/>
+            </div>
+            <div class="form-group">
+                <label>Supply Weight</label>
+                <input type="number" class="form-control" name="SUPPLY" step="0.01" value="0.5" required/>
+            </div>
+            <div class="form-group">
+                <label>Demand Weight</label>
+                <input type="number" class="form-control" name="DEMAND" step="0.01" value="0.5" required/>
+            </div>
+            <div class="form-group">
+                <label>Vibe Weight</label>
+                <input type="number" class="form-control" name="VIBE"  step="0.01" value="0.5" required/>
+            </div>
+            <div class="form-group">
+                <label>Human Presence Weight</label>
+                <input type="number" class="form-control" name="HMP"  step="0.01" value="0.5"required />
+            </div>
+            <div class="form-group">
+                <label>Recent Transactions</label>
+                <input type="number" class="form-control" name="RTX"   step="0.01" value="0.5" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Find Locations!</button>
+
+        </form>
+        <br>
+        <div id="results"></div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src={{ url_for('static', filename='main.js') }}></script>
+  </body>
+</html>
