@@ -7,3 +7,6 @@ VIBE
 RECENT TRANSACTIONS
 RENT
 HUMAN PRESENCE
+
+How to run the code:
+cd to app folder and then fire `python app.py`
